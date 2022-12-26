@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="MarioCalc.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MarioCalc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid RenderTransformOrigin="0.48,0.471" Background="Black"
+        CharacterReceived="Grid_CharacterReceived" KeyDown="Grid_KeyDown" KeyUp="Grid_KeyUp" Unloaded="Grid_Unloaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="desk" Grid.Row="0" Background="Aqua">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30">
+                <TextBlock Text="level: " FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontWeight="Bold"/>
+                <Rectangle HorizontalAlignment="Stretch" Width="20" Opacity="0" Fill="Black" />
+                <TextBlock x:Name="level" Text="" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontWeight="Bold"/>
+                <Rectangle HorizontalAlignment="Stretch" Width="20" Opacity="0" Fill="Black" />
+                <TextBlock x:Name="levelExt" Text="" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontWeight="Bold"/>
+            </StackPanel>
+            <Image x:Name="Image" Source="ms-appdata:///local/2022-11-15.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" Opacity="0">
+            </Image>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Name="taskSTR" Text="2+2" VerticalAlignment="Center" FontSize="120" FontWeight="Bold" Foreground="#FFF70606"/>
+                    <TextBlock Name="answerSTR" Text="=" VerticalAlignment="Center" FontSize="120" FontWeight="Bold" Foreground="#FFF70606"/>
+                </StackPanel>
+                <Rectangle HorizontalAlignment="Stretch" Height="100" Opacity="0" Fill="Black" />
+                <Button x:Name="nextButton" Content="Next" Click="Button_Click_1"
+                        Width="207"
+                        Background="Gray"
+                        Foreground="DarkRed"
+                        FontSize="24"
+                        HorizontalAlignment="Center"
+                        Height="54">
+                    <Button.Resources>
+                        <ResourceDictionary>
+                            <!--<SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Red"/>-->
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Gray"/>
+                            <!--<SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#FF61EF14"/>-->
+                        </ResourceDictionary>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Name="messageStr" Margin="0,0,0,50" Foreground="#FFF70606" Height="50" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="1" Name="verStr" Text="ver -1" Margin="20,0,300,20" Foreground="#FF9207F7" Height="20" VerticalAlignment="Bottom"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Button x:Name="sButton" Content="Sound" Click="sButton_Click"
+                    Width="60" Height="30"
+                    Background="#FF072B07"
+                    Foreground="#FF692020"
+                    FontSize="12">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <!--<SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Red"/>-->
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FF072B07"/>
+                        <!--<SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#FF61EF14"/>-->
+                    </ResourceDictionary>
+                </Button.Resources>
+            </Button>
+            <Rectangle HorizontalAlignment="Stretch" Height="60" Width="60" Opacity="0" Fill="Black" />
+            <Button x:Name="rButton" Content="Reset" Click="rButton_Click"
+                    Width="50" Height="30"
+                    Background="#FF072B07"
+                    Foreground="#FF692020"
+                    FontSize="12">
+                <Button.Resources>
+                    <ResourceDictionary>
+                        <!--<SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="Red"/>-->
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FF072B07"/>
+                        <!--<SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="#FF61EF14"/>-->
+                    </ResourceDictionary>
+                </Button.Resources>
+            </Button>
+            <Rectangle HorizontalAlignment="Stretch" Height="60" Width="30" Opacity="0" Fill="Black" />
+        </StackPanel>
+    </Grid>
+</Page>
